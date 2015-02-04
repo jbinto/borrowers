@@ -12,7 +12,7 @@ export default Ember.Route.extend({
     },
     cancel: function() {
       console.log('+--- cancel bubbled up to friends route');
-      return true;
+      return false;
     }
   }
 });

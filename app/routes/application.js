@@ -7,6 +7,7 @@ export default Ember.Route.extend({
       return true;
     },
     cancel: function() {
+      // Won't execute: we return false in the friends route.
       console.log('+---- cancel bubbled up to application route');
       return true;
     }
