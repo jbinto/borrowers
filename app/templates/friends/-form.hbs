@@ -7,6 +7,7 @@
 
 
 <form {{action "save" on="submit"}}>
+  <h2>{{errorMessage}}</h2>
   <p>
     <label>First name: {{input value=model.firstName}}</label>
     <label>Last name: {{input value=model.lastName}}</label>
