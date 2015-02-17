@@ -10,7 +10,7 @@
       ID {{friend.id}}
       {{! link-to w/model param: http://emberjs.com/api/classes/Ember.Handlebars.helpers.html#toc_supplying-a-model }}
       {{#link-to 'friends.show' friend}}
-        {{friend.firstName}} {{friend.lastName}}
+        {{friend.fullName}}
       {{/link-to}}
     </li>
   {{/each}}
