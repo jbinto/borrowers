@@ -4,16 +4,21 @@
 
 <h3>Total friends: {{model.length}}</h3>
 
-<ul>
-  {{#each friend in model}}
-    <li>
-      ID {{friend.id}}
-      {{! link-to w/model param: http://emberjs.com/api/classes/Ember.Handlebars.helpers.html#toc_supplying-a-model }}
-      {{#link-to 'friends.show' friend}}
-        {{friend.fullName}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each friend in model}}
+      <tr>
+        <td>{{link-to friend.fullName "friends.show" friend}}</td>
+        <td><a href="#" {{action "delete" friend}}>Delete</a></td>
+      </tr>  
+    {{/each}}
+  </tbody>
+</table>
 
 {{ link-to 'Add a new friend' 'friends.new' }}
