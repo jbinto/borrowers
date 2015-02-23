@@ -14,4 +14,14 @@ export default Ember.Route.extend({
   // Nitty gritty details here:
   // https://github.com/emberjs/ember.js/blob/f90ae24e633ab0567a1ba4ea9184f7a420921f03/packages/ember-routing/lib/system/route.js#L1241
 
+
+  actions: {
+    delete: function(friend) {
+      var self = this;
+      friend.destroyRecord().then(function() {
+        self.transitionTo('friends.index');
+      });
+    }
+  }
+
 });
