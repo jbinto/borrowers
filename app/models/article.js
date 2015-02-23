@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  friend: DS.belongsTo('friend'),
   createdAt: DS.attr('date'),
   description: DS.attr('string'),
   notes: DS.attr('string'),
