@@ -1,19 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  isValid: Ember.computed(
-    'model.description',
-    function() {
-      return Ember.isPresent(this.get('model.description'));
-    }
-  ),
+  hasDescription: Ember.computed.notEmpty('description'),
+  hasNotes: Ember.computed.notEmpty('hasNotes'),
+  isValid: Ember.computed.and('hasDescription', 'hasNotes'),
   actions: {
     save: function() { 
       if (this.get('isValid')) {
         return true;
       }
       else {
-        this.set('errorMessage', "Please enter a description.");
+        this.set('errorMessage', "Please fill all fields.");
         return false;
       }
     }
