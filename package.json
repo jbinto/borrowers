@@ -38,6 +38,6 @@
     "moment": "^2.9.0"
   },
   "dependencies": {
-    "ember-cli-fill-murray-jbinto": "^0.1.0"
+    "ember-cli-fill-murray-jbinto": "^0.1.4"
   }
 }
