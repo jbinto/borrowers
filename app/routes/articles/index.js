@@ -33,6 +33,7 @@ export default Ember.Route.extend({
 
     return articles;
   },
+
   actions: {
     save: function(article) {
       console.log("article.index route save called");
